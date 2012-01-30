@@ -1,0 +1,16 @@
+# ignore everything by default
+/*
+
+# now i will explicitly list the files i want under version control
+!/.gitignore
+!/.dotfiles.gitignore
+!/.profile
+!/.bash_profile
+!/.bashrc
+
+# a tricky pattern:
+# exclude private files within a directory, but keep certain files
+# inside that directory under version control
+!/.ssh
+/.ssh/*
+!/.ssh/config
