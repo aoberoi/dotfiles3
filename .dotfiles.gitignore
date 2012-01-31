@@ -1,12 +1,16 @@
 # ignore everything by default
 /*
 
+# this is the gitignore file for this reposiory
+!/.dotfiles.gitignore
+
 # now i will explicitly list the files i want under version control
 !/.gitignore
-!/.dotfiles.gitignore
+!/.gitconfig
 !/.profile
 !/.bash_profile
 !/.bashrc
+!/.vimrc
 
 # a tricky pattern:
 # exclude private files within a directory, but keep certain files
