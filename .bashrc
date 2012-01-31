@@ -102,10 +102,13 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# coming from default .profile of Ubuntu
-
+# START coming from default .profile of Ubuntu
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-alias dotfiles='git --git-dir=/home/ankur/.dotfiles.git/ --work-tree=/home/ankur'
+# END coming from default .profile of Ubuntu
+
+# dotfiles alias
+alias dotfiles="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+

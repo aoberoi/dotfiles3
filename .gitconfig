@@ -1,7 +1,7 @@
 [user]
-	name = Ankur Oberoi
-	email = aoberoi@gmail.com
+	name = "Ankur Oberoi"
+	email = "aoberoi@gmail.com"
 [color]
 	ui = true
 [core]
-	excludesfile = /home/ankur/.gitignore
+	excludesfile = "~/.gitignore"

@@ -6,4 +6,4 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-[[ "/home/ankur/.rvm/scripts/rvm" ]] && source "/home/ankur/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
