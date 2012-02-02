@@ -10,7 +10,12 @@
 !/.profile
 !/.bash_profile
 !/.bashrc
+
+# vim config
 !/.vimrc
+!/.vim
+/.vim/*
+!/.vim/after
 
 # a tricky pattern:
 # exclude private files within a directory, but keep certain files
