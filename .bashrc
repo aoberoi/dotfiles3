@@ -124,7 +124,7 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   # bright green base name of working directory (with $HOME abbreviated as ~)
   # {space}
   # blue username
-  PS1="$PS1\[$BWhite\]\h\[$Color_Off\]:\[$BIRed\]\W\[$Color_Off\] \[$BGreen\]\u\[$Color_Off\]\$ "
+  PS1="$PS1\[$BRed\]\w\[$Color_Off\]:\[$BWhite\]\u\[$Color_Off\]\$ "
 
   # Colorize the 'ls' command
   # This works on Ubuntu
