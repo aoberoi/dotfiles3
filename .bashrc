@@ -85,7 +85,7 @@ load_colors ()
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
-PS1=
+PS1="\n"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -124,7 +124,7 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   # bright green base name of working directory (with $HOME abbreviated as ~)
   # {space}
   # blue username
-  PS1="$PS1\[$White\]\h\[$Color_Off\]:\[$IGreen\]\W\[$Color_Off\] \[$Blue\]\u\[$Color_Off\]\$ "
+  PS1="$PS1\[$BWhite\]\h\[$Color_Off\]:\[$BIRed\]\W\[$Color_Off\] \[$BGreen\]\u\[$Color_Off\]\$ "
 
   # Colorize the 'ls' command
   # This works on Ubuntu
