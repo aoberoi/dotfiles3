@@ -1,3 +1,7 @@
+" settings are enclosed in single-quotes
+" commands are prepended with :
+" functions have parens at the end
+
 " enable syntax highlighting
 :syntax enable
 
