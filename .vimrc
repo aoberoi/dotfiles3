@@ -2,6 +2,9 @@
 " Settings (things that start with set and can be in single-quotes)
 " -----------------------------------------------------------------------------
 
+" enable syntax highlighting
+:syntax enable
+
 " turn on line numbering
 set number
 
