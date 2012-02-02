@@ -1,5 +1,6 @@
-" enable syntax highlighting
-:syntax enable
+" -----------------------------------------------------------------------------
+" Settings (things that start with set and can be in single-quotes)
+" -----------------------------------------------------------------------------
 
 " turn on line numbering
 set number
@@ -40,4 +41,11 @@ set expandtab
 " number of spaces  tab character counts for, keep these two the same
 set tabstop=2
 set softtabstop=2
+
+" -----------------------------------------------------------------------------
+" Commands (start with colon)
+" -----------------------------------------------------------------------------
+
+" enable syntax highlighting
+:syntax enable
 
