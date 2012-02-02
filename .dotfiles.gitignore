@@ -13,6 +13,7 @@
 
 # vim config
 !/.vimrc
+!/.gvimrc
 !/.vim
 /.vim/*
 !/.vim/after
