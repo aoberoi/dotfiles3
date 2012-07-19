@@ -39,6 +39,10 @@ if [ -d /usr/local/mysql/bin ] ; then
     PATH="/usr/local/mysql/bin:$PATH"
 fi
 
+# rbenv (caveats)
+if which rbenv > /dev/null; then 
+    eval "$(rbenv init -)"
+fi
 
 export LANGUAGE="en_US:en"
 export LC_MESSAGES="en_US.UTF-8"
