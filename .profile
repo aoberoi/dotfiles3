@@ -29,7 +29,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# this path contains programs like node and npm
+# this path contains programs like node, npm, and homebrew's binaries
 if [ -d /usr/local/bin ] ; then
     PATH="/usr/local/bin:$PATH"
 fi
