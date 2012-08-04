@@ -10,6 +10,7 @@
 !/.profile
 !/.bash_profile
 !/.bashrc
+!/.dotfiles.README.md
 
 # vim config
 !/.vimrc
