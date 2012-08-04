@@ -85,7 +85,7 @@ load_colors ()
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
-PS1="\n"
+# PS1="\n"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -124,7 +124,7 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   # bright green base name of working directory (with $HOME abbreviated as ~)
   # {space}
   # blue username
-  PS1="$PS1\[$BRed\]\w\[$Color_Off\]:\[$BWhite\]\u\[$Color_Off\]\$ "
+  # PS1="$PS1\[$BRed\]\w\[$Color_Off\]:\[$BWhite\]\u\[$Color_Off\]\$ "
 
   # Colorize the 'ls' command
   # This works on Ubuntu
@@ -144,8 +144,8 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
 
-else
-  PS1="$PS1\h:\W \u\$ "
+# else
+  # PS1="$PS1\h:\W \u\$ "
 fi
 
 # If this is an xterm set the window/tab title to user@host:dir
@@ -178,7 +178,8 @@ fi
 #   . ~/.bash_aliases
 # fi
 
-alias titanium='/Library/Application\ Support/Titanium/mobilesdk/osx/2.0.2.GA/titanium.py'
+# titanium SDK
+alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.0.GA/titanium.py'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -189,9 +190,6 @@ fi
 
 # dotfiles alias
 alias dotfiles="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
-
-# vpn workaround alias
-alias @tunnel="screen -d -m ssh -D 9999 -p 8081 ankur@216.38.134.122"
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
@@ -231,10 +229,12 @@ alias pumpitup="osascript -e 'set volume 10'"
 
 # prefer the GUI versions of vim (mvim on Mac, gvim on Linux)
 if [[ $OSTYPE == *darwin* ]]; then
-  alias vim="mvim --remote-silent"
+  # alias vim="mvim --remote-silent"
+  alias mvim="mvim --remote-silent"
   export EDITOR="mvim -f"
 elif [[ $OSTYPE == *linux-gnu* ]]; then
-  alias vim="gvim --remote-silent"
+  # alias vim="gvim --remote-silent"
+  alias gvim="gvim --remote-silent"
   export EDITOR="gvim -f"
 fi
 
@@ -275,4 +275,3 @@ function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer
 }
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

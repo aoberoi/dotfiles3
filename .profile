@@ -49,3 +49,7 @@ export LC_MESSAGES="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
 
+# in order to build tokbox using ant
+export ANT_OPTS=-XX:MaxPermSize=512m
+
+
