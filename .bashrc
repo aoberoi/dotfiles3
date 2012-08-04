@@ -188,6 +188,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
 
+# bash-completion Formula from homebrew
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
 # dotfiles alias
 alias dotfiles="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 

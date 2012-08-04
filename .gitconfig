@@ -4,6 +4,6 @@
 [color]
 	ui = true
 [core]
-	excludesfile = "~/.gitignore"
+	excludesfile = /Users/ankur/.gitignore
 [credential]
 	helper = osxkeychain
