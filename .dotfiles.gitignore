@@ -16,7 +16,7 @@
 !/.vimrc
 !/.gvimrc
 !/.vim
-/.vim/*
+!/.vim/*
 !/.vim/after
 
 # a tricky pattern:
