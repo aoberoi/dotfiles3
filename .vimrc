@@ -35,15 +35,26 @@ set nowrap
 " on new lines, use indent from preceding lines
 set autoindent
 
-" number of spaces for autoindent (>> or <<)
+" HARD TABS ONLY
+" ==============
+" number of spaces for autoindent (>> or << or ==)
 set shiftwidth=2
-
-" <Tab> key inserts spaces instead of tab characters
-set expandtab
-
-" number of spaces  tab character counts for, keep these two the same
+" number of spaces the <Tab> character appears as
 set tabstop=2
-set softtabstop=2
+
+" SOFT TABS ONLY
+" ==============
+" <Tab> key inserts spaces instead of tab characters
+" set expandtab
+" number of spaces for autoindent (>> or << or ==)
+" set shiftwidth=2
+" determintes what happens when pressing <Tab> or  <BS>. While explandtab is on, keep
+" this value equal to shiftwidth
+" set softtabstop=2
+
+" seeing invisible characters
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list
 
 " -----------------------------------------------------------------------------
 " Commands (start with colon)

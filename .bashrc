@@ -235,11 +235,13 @@ alias pumpitup="osascript -e 'set volume 10'"
 # prefer the GUI versions of vim (mvim on Mac, gvim on Linux)
 if [[ $OSTYPE == *darwin* ]]; then
   # alias vim="mvim --remote-silent"
-  alias mvim="mvim --remote-silent"
+	# commenting this out because using --remote-silent makes opening mvim without a file impossible
+  # alias mvim="mvim --remote-silent"
   export EDITOR="mvim -f"
 elif [[ $OSTYPE == *linux-gnu* ]]; then
   # alias vim="gvim --remote-silent"
-  alias gvim="gvim --remote-silent"
+	# commenting this out because using --remote-silent makes opening gvim without a file impossible
+  # alias gvim="gvim --remote-silent"
   export EDITOR="gvim -f"
 fi
 

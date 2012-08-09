@@ -12,3 +12,4 @@ Icon?
 .*.sw[a-z]
 *.un~
 Session.vim
+.netrwhist
