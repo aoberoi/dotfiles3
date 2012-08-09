@@ -9,7 +9,7 @@ Icon?
 .Trashes
 
 # vim.gitignore
-.*.sw[a-z]
+*.sw[a-z]
 *.un~
 Session.vim
 .netrwhist
