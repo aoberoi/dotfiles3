@@ -1,4 +1,26 @@
 " -----------------------------------------------------------------------------
+" Vundle (plugin management)
+" -----------------------------------------------------------------------------
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+Bundle 'scrooloose/syntastic'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'chriskempson/base16-vim'
+" Bundle 'chriskempson/vim-tomorrow-theme'
+" Bundle 'spolu/dwm.vim'
+" Bundle 'git://git.wincent.com/command-t.git'
+
+" -----------------------------------------------------------------------------
 " Settings (things that start with set and can be in single-quotes)
 " -----------------------------------------------------------------------------
 
@@ -86,11 +108,13 @@ set list
 " enable syntax highlighting
 :syntax enable
 
-" enable filetype detection
-:filetype on
+" enable filetype detection (doesn't work with vundle)
+":filetype on
 " enable loading the publing files for specific file types (loads ftplugin.vim on rtp)
+" (required by vundle)
 :filetype plugin on
 " enable loading the indent file for specific file types (loads indent.vim on rtp)
+" (required by vundle)
 :filetype indent on
 
 " ------------------------------------------------------------------------------
@@ -103,11 +127,22 @@ let g:netrw_winsize=20
 "let g:netrw_alto=nosb
 "let g:netrw_altv=nospr
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'rc'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_user_command = 'find %s -type f'
+
+
 " ------------------------------------------------------------------------------
 " Key mappings
 " ------------------------------------------------------------------------------
 " make window movement easier
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-r> <C-w>k
-map <C-l> <C-w>l
+" map <C-h> <C-w>h
+" map <C-j> <C-w>j
+" map <C-r> <C-w>k
+" map <C-l> <C-w>l
+
+" map leader
+let mapleader=","

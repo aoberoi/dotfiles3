@@ -1,4 +1,6 @@
-color vwilight
+" color vwilight
+colorscheme base16-default
+set background=dark
 set linespace=2
 set antialias
 
@@ -15,5 +17,4 @@ if has("gui_macvim")
 elseif has("gui_gnome")
   set guifont=Ubuntu\ Mono\ 14
 end
-
 

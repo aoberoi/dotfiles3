@@ -17,6 +17,7 @@
 !/.gvimrc
 !/.vim
 !/.vim/*
+/.vim/bundle
 !/.vim/after
 
 # a tricky pattern:
