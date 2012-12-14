@@ -16,12 +16,10 @@ Bundle 'aoberoi/base16-vim'
 
 " My Bundles here:
 Bundle 'scrooloose/syntastic'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'chriskempson/base16-vim'
-" Bundle 'chriskempson/vim-tomorrow-theme'
-" Bundle 'spolu/dwm.vim'
-" Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'vim-scripts/bufexplorer.zip'
+Bundle 'editorconfig/editorconfig-vim'
 
 " -----------------------------------------------------------------------------
 " Settings (things that start with set and can be in single-quotes)
@@ -138,7 +136,9 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn)$'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_user_command = 'find %s -type f'
+" let g:ctrlp_user_command = 'find %s -type f'
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+
 
 
 " ------------------------------------------------------------------------------
