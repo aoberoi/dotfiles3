@@ -67,7 +67,8 @@ set textwidth=79
 " formatoptions, see :set formatoptions? **
 set formatoptions-=t
 set formatoptions-=c
-" allow gq, continue comments on next like if you press <Enter>, don't break a
+set formatoptions-=o
+" allow gq, continue comments on next line if you press <Enter>, don't break a
 " line after a 1-letter word
 set formatoptions+=q
 set formatoptions+=r
