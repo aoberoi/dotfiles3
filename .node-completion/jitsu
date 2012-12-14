@@ -1,0 +1,7 @@
+__jitsu_comp() {
+  COMPREPLY=()
+  COMPREPLY=($(jitsu --compgen "${COMP_WORDS[@]}"))
+  return 0
+}
+
+complete -F __jitsu_comp jitsu 2>/dev/null
