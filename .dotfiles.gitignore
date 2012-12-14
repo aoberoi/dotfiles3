@@ -11,6 +11,7 @@
 !/.bash_profile
 !/.bashrc
 !/.dotfiles.README.md
+!/.node-completion
 
 # vim config
 !/.vimrc
