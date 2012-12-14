@@ -83,19 +83,22 @@ set autoindent
 " HARD TABS ONLY
 " ==============
 " number of spaces for autoindent (>> or << or ==)
-set shiftwidth=2
+" set shiftwidth=2
 " number of spaces the <Tab> character appears as
-set tabstop=2
+" set tabstop=2
 
 " SOFT TABS ONLY
 " ==============
 " <Tab> key inserts spaces instead of tab characters
-" set expandtab
+set expandtab
 " number of spaces for autoindent (>> or << or ==)
-" set shiftwidth=2
+set shiftwidth=2
 " determintes what happens when pressing <Tab> or  <BS>. While explandtab is on, keep
 " this value equal to shiftwidth
-" set softtabstop=2
+set softtabstop=2
+
+" Soft tabs for coffeescript
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 softtabstop=2 expandtab
 
 " seeing invisible characters
 set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
