@@ -179,7 +179,7 @@ fi
 # fi
 
 # titanium SDK
-alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.0.GA/titanium.py'
+alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.4.GA/titanium.py'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -194,6 +194,16 @@ if [[ $OSTYPE == *darwin* ]]; then
 		. `brew --prefix`/etc/bash_completion
 	fi
 fi
+
+# {{{
+# Node Completion - Auto-generated, do not touch.
+# originally put in .bash_profile
+shopt -s progcomp
+for f in $(command ls ~/.node-completion); do
+  f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+# }}}
 
 # dotfiles alias
 alias dotfiles="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
