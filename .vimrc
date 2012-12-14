@@ -11,6 +11,9 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
+" Color scheme
+Bundle 'aoberoi/base16-vim'
+
 " My Bundles here:
 Bundle 'scrooloose/syntastic'
 Bundle 'fholgado/minibufexpl.vim'
