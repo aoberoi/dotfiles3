@@ -47,6 +47,16 @@ if which rbenv > /dev/null; then
     eval "$(rbenv init -)"
 fi
 
+# vert.x
+if [ -d /usr/local/vert.x/bin ] ; then
+	PATH="/usr/local/vert.x/bin:$PATH"
+fi
+
+# VirtualBox + vagrant
+if [ -d /Applications/VirtualBox.app ] ; then
+	PATH="$PATH:/Applications/VirtualBox.app/Contents/MacOS/"
+fi
+
 export LANGUAGE="en_US:en"
 export LC_MESSAGES="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
