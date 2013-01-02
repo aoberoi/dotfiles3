@@ -12,6 +12,7 @@
 !/.bashrc
 !/.dotfiles.README.md
 !/.node-completion
+!/.base16-tomorrow.dark.256.itermcolors
 
 # vim config
 !/.vimrc

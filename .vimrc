@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 
 " Color scheme
 Bundle 'aoberoi/base16-vim'
+colorscheme base16-default
 
 " My Bundles here:
 Bundle 'scrooloose/syntastic'
