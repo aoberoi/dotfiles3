@@ -40,6 +40,9 @@ if [ -d /usr/local/mysql/bin ] ; then
 fi
 
 # rbenv (caveats)
+if [ -d $HOME/.rbenv/bin ] ; then
+    PATH="$HOME/.rbenv/bin:$PATH"
+fi
 if which rbenv > /dev/null; then 
     eval "$(rbenv init -)"
 fi
