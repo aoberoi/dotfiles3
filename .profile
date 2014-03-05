@@ -31,7 +31,7 @@ fi
 
 # this path contains programs like node, npm, and homebrew's binaries
 if [ -d /usr/local/bin ] ; then
-    PATH="/usr/local/bin:$PATH"
+    PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
 # this path contains mysql on OS X (from downloaded pkg on mysql website)
@@ -55,6 +55,12 @@ fi
 # VirtualBox + vagrant
 if [ -d /Applications/VirtualBox.app ] ; then
 	PATH="$PATH:/Applications/VirtualBox.app/Contents/MacOS/"
+fi
+
+# Android SDK
+if [ -d $HOME/Developer/android-sdk-macosx/tools ] ; then
+	PATH="$PATH:$HOME/Developer/android-sdk-macosx/tools"
+	PATH="$PATH:$HOME/Developer/android-sdk-macosx/platform-tools"
 fi
 
 export LANGUAGE="en_US:en"

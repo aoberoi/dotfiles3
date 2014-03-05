@@ -179,7 +179,7 @@ fi
 # fi
 
 # titanium SDK
-alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.1.4.GA/titanium.py'
+alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/3.0.0.GA/titanium.py'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

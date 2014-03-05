@@ -20,6 +20,16 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'AndrewRadev/switch.vim'
+Bundle 'matchit.zip'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-surround'
+Bundle 'mattn/zencoding-vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'bling/vim-airline'
+Bundle 'leafgarland/typescript-vim'
+" Bundle 'suan/vim-instant-markdown' " Doesn't seem stable enough
 
 " -----------------------------------------------------------------------------
 " Settings (things that start with set and can be in single-quotes)
@@ -61,10 +71,10 @@ set scrolloff=3
 
 " wrap a specific selection by visually selecting it and then hitting gq
 set wrap
-set textwidth=79
+set textwidth=100
+"
 " don't autowrap text while in insert mode, don't do it for comments
-" ** for some reason, this does not take effect. something else is touching
-" formatoptions, see :set formatoptions? **
+" ** this does not take effect when a filetype plugin overrides these formatoptions
 set formatoptions-=t
 set formatoptions-=c
 set formatoptions-=o
@@ -113,9 +123,9 @@ set list
 " enable syntax highlighting
 :syntax enable
 
-" enable filetype detection (doesn't work with vundle)
-":filetype on
-" enable loading the publing files for specific file types (loads ftplugin.vim on rtp)
+" enable filetype detection
+:filetype on
+" enable loading the plugin files for specific file types (loads ftplugin.vim on rtp)
 " (required by vundle)
 :filetype plugin on
 " enable loading the indent file for specific file types (loads indent.vim on rtp)
@@ -140,7 +150,30 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " let g:ctrlp_user_command = 'find %s -type f'
 " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 
+let g:user_zen_settings = {
+\   'html' : {
+\     'default_attributes' : {
+\       'script:tb' : [{'type': 'text/javascript'}, {'src': 'http://static.opentok.com/v1.1/js/TB.min.js'}],
+\       'script:tb:s' : [{'type': 'text/javascript'}, {'src': 'https://swww.tokbox.com/v1.1/js/TB.min.js'}],
+\       'script:tbrtc' : [{'type': 'text/javascript'}, {'src': 'http://static.opentok.com/webrtc/v2.0/js/TB.min.js'}],
+\       'script:tbrtc:s' : [{'type': 'text/javascript'}, {'src': 'https://swww.tokbox.com/webrtc/v2.0/js/TB.min.js'}]
+\     }
+\   }
+\}
 
+" ------------------------------------------------------------------------------
+" Custom functions
+" ------------------------------------------------------------------------------
+
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d sts=%d %set :",
+        \ &tabstop, &shiftwidth, &textwidth, &softtabstop, &expandtab ? '' : 'no')
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
+endfunction
 
 " ------------------------------------------------------------------------------
 " Key mappings
@@ -153,3 +186,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " map leader
 let mapleader=","
+
+" insert modeline
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
+" switch.vim
+nnoremap - :Switch<cr> 
