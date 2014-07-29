@@ -29,6 +29,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'godlygeek/tabular'
 " Bundle 'suan/vim-instant-markdown' " Doesn't seem stable enough
 
 " -----------------------------------------------------------------------------

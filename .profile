@@ -63,6 +63,12 @@ if [ -d $HOME/Developer/android-sdk-macosx/tools ] ; then
 	PATH="$PATH:$HOME/Developer/android-sdk-macosx/platform-tools"
 fi
 
+# Go
+if [ -d $HOME/Developer/go ] ; then
+	GOPATH="$HOME/Developer/go"
+        PATH="$PATH:$GOPATH/bin"
+fi
+
 export LANGUAGE="en_US:en"
 export LC_MESSAGES="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"

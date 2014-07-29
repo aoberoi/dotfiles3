@@ -3,7 +3,7 @@
 #
 # Mostly this should include aliases and functions (bash specific)
 
-load_colors () 
+load_colors ()
 {
   # Reset
   Color_Off='\e[0m'       # Text Reset
@@ -294,3 +294,23 @@ function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer
 }
 
+if [[ $OSTYPE == *darwin* ]]; then
+  function setjdk() {
+  if [ $# -ne 0 ]; then
+   removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+   if [ -n "${JAVA_HOME+x}" ]; then
+    removeFromPath $JAVA_HOME
+   fi
+   export JAVA_HOME=`/usr/libexec/java_home -v $@`
+   export PATH=$JAVA_HOME/bin:$PATH  
+  fi
+ }
+ function removeFromPath() {
+  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
+ }
+ setjdk 1.7
+fi
+
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
