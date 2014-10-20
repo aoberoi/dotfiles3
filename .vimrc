@@ -4,33 +4,39 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Color scheme
-Bundle 'aoberoi/base16-vim'
+Plugin 'aoberoi/base16-vim'
 
-" My Bundles here:
-Bundle 'scrooloose/syntastic'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'vim-scripts/bufexplorer.zip'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'AndrewRadev/switch.vim'
-Bundle 'matchit.zip'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-surround'
-Bundle 'mattn/zencoding-vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'bling/vim-airline'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'godlygeek/tabular'
-" Bundle 'suan/vim-instant-markdown' " Doesn't seem stable enough
+" My Plugins here:
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'vim-scripts/bufexplorer.zip'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'AndrewRadev/switch.vim'
+Plugin 'matchit.zip'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'godlygeek/tabular'
+" Plugin 'suan/vim-instant-markdown' " Doesn't seem stable enough
+
+" All of your Plugins must be added before the following line
+call vundle#end()           " required
+filetype plugin indent on   " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 
 " -----------------------------------------------------------------------------
 " Settings (things that start with set and can be in single-quotes)
