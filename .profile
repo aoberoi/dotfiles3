@@ -40,9 +40,10 @@ if [ -d /usr/local/mysql/bin ] ; then
 fi
 
 # rbenv (caveats)
-if [ -d $HOME/.rbenv/bin ] ; then
-    PATH="$HOME/.rbenv/bin:$PATH"
-fi
+# if [ -d $HOME/.rbenv/bin ] ; then
+#     PATH="$HOME/.rbenv/bin:$PATH"
+# fi
+export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then 
     eval "$(rbenv init -)"
 fi
@@ -73,8 +74,4 @@ export LANGUAGE="en_US:en"
 export LC_MESSAGES="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
-
-# in order to build tokbox using ant
-export ANT_OPTS=-XX:MaxPermSize=512m
-
 
