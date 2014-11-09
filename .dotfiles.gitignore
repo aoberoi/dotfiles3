@@ -14,6 +14,7 @@
 !/.node-completion
 !/.base16-tomorrow.dark.256.itermcolors
 !/.inputrc
+!/.travis
 
 # vim config
 !/.vimrc

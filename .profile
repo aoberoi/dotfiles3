@@ -58,9 +58,9 @@ if [ -d /Applications/VirtualBox.app ] ; then
 fi
 
 # Android SDK
-if [ -d $HOME/Developer/android-sdk-macosx/tools ] ; then
-	PATH="$PATH:$HOME/Developer/android-sdk-macosx/tools"
-	PATH="$PATH:$HOME/Developer/android-sdk-macosx/platform-tools"
+if [ -d $HOME/Developer/android-sdk/tools ] ; then
+	PATH="$PATH:$HOME/Developer/android-sdk/tools"
+	PATH="$PATH:$HOME/Developer/android-sdk/platform-tools"
 fi
 
 # Go

@@ -31,6 +31,7 @@ Bundle 'bling/vim-airline'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'godlygeek/tabular'
 " Bundle 'suan/vim-instant-markdown' " Doesn't seem stable enough
+Bundle 'vim-scripts/EasyGrep'
 
 " -----------------------------------------------------------------------------
 " Settings (things that start with set and can be in single-quotes)

@@ -1,5 +1,3 @@
-# This is being sourced from ~/.bash_profile so it will be run for login and
-# non-login shells. As it is, this contains plenty of defaults from ubuntu.
 #
 # Mostly this should include aliases and functions (bash specific)
 
@@ -178,9 +176,6 @@ fi
 #   . ~/.bash_aliases
 # fi
 
-# titanium SDK
-alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/3.0.0.GA/titanium.py'
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -314,3 +309,6 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# added by travis gem
+[ -f /Users/ankur/.travis/travis.sh ] && source /Users/ankur/.travis/travis.sh

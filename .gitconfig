@@ -5,7 +5,7 @@
 	ui = true
 [core]
 	excludesfile = /Users/ankur/.gitignore
-	pager = less -r
+	pager = less -R
 [credential]
 	helper = osxkeychain
 [diff]
