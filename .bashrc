@@ -190,16 +190,6 @@ if [[ $OSTYPE == *darwin* ]]; then
 	fi
 fi
 
-# {{{
-# Node Completion - Auto-generated, do not touch.
-# originally put in .bash_profile
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
-
 # dotfiles alias
 alias dotfiles="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
@@ -303,7 +293,7 @@ if [[ $OSTYPE == *darwin* ]]; then
  function removeFromPath() {
   export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
  }
- setjdk 1.7
+ setjdk 1.8
 fi
 
 

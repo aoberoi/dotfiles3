@@ -14,24 +14,40 @@ Plugin 'gmarik/vundle'
 " Color scheme
 Plugin 'aoberoi/base16-vim'
 
-" My Plugins here:
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-scripts/bufexplorer.zip'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'AndrewRadev/switch.vim'
-Plugin 'matchit.zip'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'godlygeek/tabular'
-" Plugin 'suan/vim-instant-markdown' " Doesn't seem stable enough
-Plugin 'vim-scripts/EasyGrep'
+" utility
+Plugin 'tpope/vim-eunuch'                 " unix commands from inside vim
+                                          " :SudoWrite, :Wall, :Move, :Mkdir, more
+Plugin 'tpope/vim-surround'               " manipulate 'surroundings'
+                                          " cs'] ds'
+Plugin 'tpope/vim-fugitive'               " git wrapper
+                                          " :Gstatus, :Gdiff, :Gcommit, :Gwrite, :Gremove, :Ggrep, :Git ...
+Plugin 'godlygeek/tabular'                " alignment and tab spacing
+                                          " :Tab /{pattern}
+Plugin 'scrooloose/syntastic'             " syntax error checking
+                                          " hooks into jshint
+Plugin 'bling/vim-airline'                " nice looking and pluggable status line
+
+" navigation
+Plugin 'kien/ctrlp.vim'                   " fuzzy file search within project directory
+                                          " <C-p>filename
+Plugin 'vim-scripts/bufexplorer.zip'      " most recently used buffer explorer window
+                                          " <Leader>be
+Plugin 'scrooloose/nerdtree'              " side panel file explorer
+                                          " :NerdTree
+Plugin 'vim-scripts/EasyGrep'             " project-wide search
+                                          " <Leader>vv, <Leader>vV, <Leader>vr, :GrepOptions
+
+" web development
+" Plugin 'mattn/webapi-vim'               " a bunch of parsers
+Plugin 'mattn/emmet-vim'                  " expand abbreviations and snippets in html
+                                          " <C-y>,
+
+" syntax support
+Plugin 'kchmck/vim-coffee-script'         " coffeescript syntax, indenting, compiling, more
+                                          " :make integration depends in 'coffee'
+Plugin 'leafgarland/typescript-vim'       " typescript syntax, compiling
+                                          " :make integration depends on 'tsc'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
@@ -117,12 +133,12 @@ set shiftwidth=2
 " this value equal to shiftwidth
 set softtabstop=2
 
-" Soft tabs for coffeescript
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 softtabstop=2 expandtab
-
 " seeing invisible characters
 set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 set list
+
+" recognize .md as markdown instead of Modula-2
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " -----------------------------------------------------------------------------
 " Commands (start with colon)
@@ -158,16 +174,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " let g:ctrlp_user_command = 'find %s -type f'
 " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 
-let g:user_zen_settings = {
-\   'html' : {
-\     'default_attributes' : {
-\       'script:tb' : [{'type': 'text/javascript'}, {'src': 'http://static.opentok.com/v1.1/js/TB.min.js'}],
-\       'script:tb:s' : [{'type': 'text/javascript'}, {'src': 'https://swww.tokbox.com/v1.1/js/TB.min.js'}],
-\       'script:tbrtc' : [{'type': 'text/javascript'}, {'src': 'http://static.opentok.com/webrtc/v2.0/js/TB.min.js'}],
-\       'script:tbrtc:s' : [{'type': 'text/javascript'}, {'src': 'https://swww.tokbox.com/webrtc/v2.0/js/TB.min.js'}]
-\     }
-\   }
-\}
+" let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.emmet/snippets.json')), "\n"))
 
 " ------------------------------------------------------------------------------
 " Custom functions
@@ -197,6 +204,3 @@ let mapleader=","
 
 " insert modeline
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
-
-" switch.vim
-nnoremap - :Switch<cr> 

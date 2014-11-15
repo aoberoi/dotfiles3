@@ -39,10 +39,6 @@ if [ -d /usr/local/mysql/bin ] ; then
     PATH="/usr/local/mysql/bin:$PATH"
 fi
 
-# rbenv (caveats)
-# if [ -d $HOME/.rbenv/bin ] ; then
-#     PATH="$HOME/.rbenv/bin:$PATH"
-# fi
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then 
     eval "$(rbenv init -)"
@@ -58,16 +54,16 @@ if [ -d /Applications/VirtualBox.app ] ; then
 	PATH="$PATH:/Applications/VirtualBox.app/Contents/MacOS/"
 fi
 
-# Android SDK
-if [ -d $HOME/Developer/android-sdk/tools ] ; then
-	PATH="$PATH:$HOME/Developer/android-sdk/tools"
-	PATH="$PATH:$HOME/Developer/android-sdk/platform-tools"
-fi
+# Android
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # Go
 if [ -d $HOME/Developer/go ] ; then
 	GOPATH="$HOME/Developer/go"
         PATH="$PATH:$GOPATH/bin"
+fi
+if [ -d /usr/local/opt/go/libexec/bin ] ; then
+        PATH=$PATH:/usr/local/opt/go/libexec/bin
 fi
 
 export LANGUAGE="en_US:en"
