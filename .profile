@@ -51,7 +51,7 @@ fi
 
 # VirtualBox + vagrant
 if [ -d /Applications/VirtualBox.app ] ; then
-	PATH="$PATH:/Applications/VirtualBox.app/Contents/MacOS/"
+	PATH="$PATH:/Applications/VirtualBox.app/Contents/MacOS"
 fi
 
 # Android
@@ -65,6 +65,12 @@ fi
 if [ -d /usr/local/opt/go/libexec/bin ] ; then
         PATH=$PATH:/usr/local/opt/go/libexec/bin
 fi
+
+# depot_tools (gclient)
+if [ -d $HOME/Developer/depot_tools ] ; then
+        PATH="$HOME/Developer/depot_tools:$PATH"
+fi
+
 
 export LANGUAGE="en_US:en"
 export LC_MESSAGES="en_US.UTF-8"

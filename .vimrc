@@ -47,6 +47,7 @@ Plugin 'kchmck/vim-coffee-script'         " coffeescript syntax, indenting, comp
                                           " :make integration depends in 'coffee'
 Plugin 'leafgarland/typescript-vim'       " typescript syntax, compiling
                                           " :make integration depends on 'tsc'
+Plugin 'matchit.zip'                      " configure % to match more languages (ruby do/end)
 
 
 " All of your Plugins must be added before the following line
