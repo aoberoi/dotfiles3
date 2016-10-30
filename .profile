@@ -1,6 +1,6 @@
 # This file contains defaults from Ubuntu 11.10, but may never be executed
-# directly by bash because a ~/.bash_profile exists in the repo. 
-# 
+# directly by bash because a ~/.bash_profile exists in the repo.
+#
 # Instead, this file is sourced by ~/.bash_profile to load environment
 # variables and startup programs that are not specific to bash.
 # The environment variables will stick around for non-login shells too.
@@ -40,7 +40,7 @@ if [ -d /usr/local/mysql/bin ] ; then
 fi
 
 export RBENV_ROOT=/usr/local/var/rbenv
-if which rbenv > /dev/null; then 
+if which rbenv > /dev/null; then
     eval "$(rbenv init -)"
 fi
 
@@ -55,7 +55,10 @@ if [ -d /Applications/VirtualBox.app ] ; then
 fi
 
 # Android
-export ANDROID_HOME=/usr/local/opt/android-sdk
+if [ -d $HOME/Library/Android/sdk ] ; then
+	PATH="$PATH:$HOME/Library/Android/sdk/tools"
+	export ANDROID_HOME=$HOME/Library/Android/sdk
+fi
 
 # Go
 if [ -d $HOME/Developer/go ] ; then
@@ -67,8 +70,14 @@ if [ -d /usr/local/opt/go/libexec/bin ] ; then
 fi
 
 # depot_tools (gclient)
-if [ -d $HOME/Developer/depot_tools ] ; then
-        PATH="$HOME/Developer/depot_tools:$PATH"
+if [ -d $HOME/Developer/webrtc-native/depot_tools ] ; then
+        PATH="$HOME/Developer/webrtc-native/depot_tools:$PATH"
+fi
+
+# nvm
+if [ -d $HOME/.nvm ] ; then
+	NVM_DIR="$HOME/.nvm"
+	source "$(brew --prefix nvm)/nvm.sh"
 fi
 
 
@@ -76,4 +85,3 @@ export LANGUAGE="en_US:en"
 export LC_MESSAGES="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
-

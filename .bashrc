@@ -234,7 +234,8 @@ if [[ $OSTYPE == *darwin* ]]; then
   # alias vim="mvim --remote-silent"
 	# commenting this out because using --remote-silent makes opening mvim without a file impossible
   # alias mvim="mvim --remote-silent"
-  export EDITOR="mvim -f"
+  # export EDITOR="mvim -f"
+  export EDITOR="atom -nw"
 elif [[ $OSTYPE == *linux-gnu* ]]; then
   # alias vim="gvim --remote-silent"
 	# commenting this out because using --remote-silent makes opening gvim without a file impossible
@@ -287,14 +288,17 @@ if [[ $OSTYPE == *darwin* ]]; then
     removeFromPath $JAVA_HOME
    fi
    export JAVA_HOME=`/usr/libexec/java_home -v $@`
-   export PATH=$JAVA_HOME/bin:$PATH  
+   export PATH=$JAVA_HOME/bin:$PATH
   fi
  }
  function removeFromPath() {
   export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
  }
  setjdk 1.8
+ export JDK7_HOME=`/usr/libexec/java_home -v 1.7`
+ export JDK8_HOME=`/usr/libexec/java_home -v 1.8`
 fi
+
 
 
 ### Added by the Heroku Toolbelt
@@ -302,3 +306,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
 [ -f /Users/ankur/.travis/travis.sh ] && source /Users/ankur/.travis/travis.sh
+
+## Added for swiftenv
+if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
